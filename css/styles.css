@@ -256,5 +256,6 @@ p {
 
     .button {
         font-size: 4rem;
+        width: 40%;
     }
 }
