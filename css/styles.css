@@ -1,0 +1,260 @@
+/* Import Normalize, Fonts, & Variables */
+@import '/css/normalize.css';
+@import url(https://brick.freetls.fastly.net/Playfair+Display:400/Lato:400,700,900);
+@import '/css/variables.css';
+
+html {
+    font-size: 62.5%;
+}
+
+/* Mobile Styles */
+body {
+    font-family: 'Playfair Display', serif;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-items: center;
+    position: relative;
+
+    color: var(--color-dark);
+    background-color: var(--color-light);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-dark);
+
+    color: var(--color-light);
+
+    transition: all 0.8s ease-in-out;
+}
+
+.header_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.site_logo {
+    display: block;
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+nav {
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+}
+
+nav li:first-of-type {
+    margin-left: 0;
+}
+
+nav li {
+    margin-left: 1.8rem;
+}
+
+nav a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    transition: color 0.4s ease-in-out;
+}
+
+nav a[data-active='true'],
+nav a[data-active='true']:hover,
+nav a[data-active='true']:visited {
+    color: var(--color-light);
+}
+
+.hide {
+    opacity: 0;
+    top: -200%;
+}
+
+main {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+
+    scroll-behavior: smooth;
+}
+
+section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    scroll-snap-align: start;
+}
+
+section[data-active='true'] h1,
+section[data-active='true'] h2 {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.section_container {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    border-radius: 3%;
+}
+
+.copywriting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+h1,
+h2 {
+    color: var(--color-primary);
+}
+
+p {
+    font-size: 1.5rem;
+    line-height: 2.1rem;
+    width: 90%;
+    margin: 1rem auto;
+    font-family: 'Lato', sans-serif;
+}
+
+.button {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-align: center;
+    color: var(--color-light);
+    background-color: var(--color-secondary);
+    border-radius: 3%;
+    box-shadow: 0.6rem 0.6rem 0.5rem 0.1rem #2b2d422a;
+}
+
+#jumpButton {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5rem;
+
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1rem 1rem;
+    border-radius: 5%;
+    box-shadow: 0.2rem 0 0.5rem 0.1rem #2b2d4267;
+    color: var(--color-primary);
+    background-color: var(--color-dark);
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Tablet Styles */
+
+@media (min-width: 768px) {
+    .site_logo {
+        font-size: 3.5rem;
+    }
+
+    nav a {
+        font-size: 2.5rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+
+    .button {
+        font-size: 3rem;
+        width: 60%;
+        margin: 2rem auto;
+    }
+
+    #jumpButton {
+        font-size: 2rem;
+    }
+}
+
+/* Desktop Styles */
+
+@media (min-width: 1024px) {
+    .site_logo {
+        font-size: 4rem;
+    }
+
+    nav a {
+        font-size: 3rem;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    h2 {
+        font-size: 4rem;
+    }
+
+    p {
+        font-size: 3rem;
+    }
+
+    .button {
+        font-size: 4rem;
+    }
+}
