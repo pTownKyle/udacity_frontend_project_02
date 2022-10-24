@@ -91,3 +91,27 @@ window.addEventListener('load', () => {
         activeSection.style.paddingTop = `${header.offsetHeight}px`;
     }, 1500);
 });
+
+// Smooth Scroll to Section
+navList.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent Default
+    const target = e.target.getAttribute('href'); // Get Target
+    const section = document.querySelector(target); // Get Section
+    const sectionContainer = section.querySelector('.section_container'); // Get Section Container
+
+    // Scroll to Section
+    sectionContainer.scrollIntoView({
+        behavior: 'smooth',
+    });
+});
+
+// Smooth Scroll to Top
+jumpToTop.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent Default
+    const target = e.target.getAttribute('href'); // Get Target
+    const section = document.querySelector(target); // Get Section
+    const sectionContainer = section.querySelector('.section_container'); // Get Section Container
+    sectionContainer.scrollIntoView({
+        behavior: 'smooth',
+    });
+});

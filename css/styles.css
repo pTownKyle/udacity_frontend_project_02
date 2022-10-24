@@ -86,22 +86,17 @@ nav a[data-active='true']:visited {
 }
 
 main {
-    scroll-snap-type: y mandatory;
     overflow-y: scroll;
-    height: 100vh;
-
-    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 section {
     height: 100vh;
-    width: 100vw;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    scroll-snap-align: start;
 }
 
 section[data-active='true'] h1,
