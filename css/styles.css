@@ -1,7 +1,14 @@
-/* Import Normalize, Fonts, & Variables */
-@import '/css/normalize.css';
+/* Import Normalize, Fonts, & Set Variables */
+@import './normalize.css';
 @import url(https://brick.freetls.fastly.net/Playfair+Display:400/Lato:400,700,900);
-@import '/css/variables.css';
+
+:root {
+    /* Colors */
+    --color-primary: #ef8354;
+    --color-secondary: #7a9b76;
+    --color-dark: #2b2d42;
+    --color-light: #edf2f4;
+}
 
 html {
     font-size: 62.5%;
@@ -31,6 +38,7 @@ header {
     color: var(--color-light);
 
     transition: all 0.8s ease-in-out;
+    z-index: 10;
 }
 
 .header_container {
@@ -137,6 +145,7 @@ h2 {
 h1,
 h2 {
     color: var(--color-primary);
+    z-index: 1;
 }
 
 p {
